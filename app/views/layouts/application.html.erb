@@ -11,17 +11,17 @@
     <h1>The Register Reader</h1>
     <p>Independent news, views, opinions and reviews
       on the latest in the IT industry.</p>
-      <p class='headb'>
+      <p class="headb">
         <% if user_signed_in? %>
         <%= current_user.email %>&nbsp&nbsp&nbsp
-        <%= link_to('Logout', destroy_user_session_path, :method => :delete, :class => 'pull-right btn btn-default') %>
+        <%= link_to('Logout', destroy_user_session_path, :method => :delete, :class => 'btn btn-default') %>
         <% if params[:controller] != 'user_links' %>
         <%= link_to('Saved Links', '/user_links', class: 'btn btn-default') %>
         <% else %>
         <%= link_to('Feed', '/', class: 'btn btn-default') %>
         <% end %>
-      </p>
       <% end %>
+    </p>
     </div>
     <div class="container">
       <p id="notice"><%= notice %></p>

@@ -13,8 +13,8 @@
  *= require_tree .
  *= require_self
  */
-@import "bootstrap-sprockets";
-@import "bootstrap";
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
  .odd {
    background-color: #efefef;
    opacity: 0.8;
@@ -44,10 +44,10 @@ body {
   background-position: center;
 }
 .heada {
-  opacity: 0.8;
-  margin: 0;
-  padding-top: 10;
-  padding-bottom: 10;
+  opacity: 0.8px;
+  margin: 0px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 .headb {
  text-align: right;
