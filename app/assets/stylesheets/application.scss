@@ -13,8 +13,8 @@
  *= require_tree .
  *= require_self
  */
- @import "bootstrap-sprockets";
- @import "bootstrap";
+@import "bootstrap-sprockets";
+@import "bootstrap";
  .odd {
    background-color: #efefef;
    opacity: 0.8;
@@ -60,6 +60,7 @@ form {
 }
 #notice {
   color:red;
-  text-align: center;
   font-size: 21pt;
+  text-align: center;
+
 }
