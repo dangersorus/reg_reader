@@ -12,26 +12,16 @@ class UserLinksController < ApplicationController
   def show
   end
 
-  # GET /user_links/new
-  def new
-    @user_link = UserLink.new
-  end
-
-  # GET /user_links/1/edit
-  def edit
-
-  end
-
   # POST /user_links
   # POST /user_links.json
   def create
     @user_link = UserLink.new(user_link_params)
     respond_to do |format|
       if @user_link.save
-        format.html { redirect_to '/', notice: 'Article Saved' }
+        format.html { redirect_to '/' }
         format.json { render :show, status: :created, location: @user_link }
       else
-        format.html { redirect_to '/', notice: 'Article exists.' }
+        format.html { redirect_to '/'}
         format.json { render json: @user_link.errors, status: :unprocessable_entity }
       end
     end
@@ -42,7 +32,7 @@ class UserLinksController < ApplicationController
   def destroy
     @user_link.destroy
     respond_to do |format|
-      format.html { redirect_to user_links_url, notice: 'Article Deleted' }
+      format.html { redirect_to user_links_url}
       format.json { head :no_content }
     end
   end

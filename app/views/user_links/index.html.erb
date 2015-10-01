@@ -4,7 +4,7 @@
 <% @user_links.each  do |e| %>
   <div class=' <%= cycle("odd", "even") %> .col-md-10'>
     <h2 ><a href=<%= e.url %>><%= e.title %> </a></h2>
-    <%= link_to 'Remove', e, method: :delete , class:'btn btn-default' %>
+    <%= link_to 'Remove', e, method: :delete , class:'btn btn-default rbtn' %>
     </div>
   <div class='<%= cycle("even", "odd") %>'>
     <%= raw e.summary %>

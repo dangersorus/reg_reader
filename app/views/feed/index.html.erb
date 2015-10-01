@@ -3,14 +3,14 @@
     <h2 ><a href=<%= e.url %>><%= e.title %> </a></h2>
     <div class='pull-right'>
         <% if !@user_links.include?  e.entry_id %>
-        <%= form_for UserLink.new do |f| %>
+        <%= form_for(UserLink.new, remote: true) do |f| %>
         <%= f.hidden_field :user_id, value: current_user.id %>
         <%= f.hidden_field :url, value: e.url %>
         <%= f.hidden_field :author, value: e.author %>
         <%= f.hidden_field :tag, value: e.entry_id %>
         <%= f.hidden_field :title, value: e.title %>
         <%= f.hidden_field :summary, value: e.summary %>
-        <%= f.submit 'save', class:'btn btn-xs' %>
+        <%= f.submit 'save', class:'btn btn-xs  sbtn' %>
         <% end %>
         <% else %>
         <span class="saved">saved</span>

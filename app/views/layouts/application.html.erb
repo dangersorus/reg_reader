@@ -15,7 +15,7 @@
         <% if user_signed_in? %>
         <%= current_user.email %>&nbsp&nbsp&nbsp
         <% if params[:controller] != 'user_links' %>
-        <%= link_to('Saved Links', '/user_links', class: 'btn btn-default') %>
+        <%= link_to('Saved', '/user_links', class: 'btn btn-default') %>
         <% else %>
         <%= link_to('Feed', '/', class: 'btn btn-default') %>
         <% end %>
