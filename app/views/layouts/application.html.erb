@@ -16,9 +16,9 @@
         <%= current_user.email %>&nbsp&nbsp&nbsp
         <%= link_to('Logout', destroy_user_session_path, :method => :delete, :class => 'btn btn-default') %>
         <% if params[:controller] != 'user_links' %>
-        <%= link_to('Saved Links', '/user_links', class: 'btn btn-default') %>
+        <%= button_to('Saved Links', '/user_links', class: 'btn btn-default') %>
         <% else %>
-        <%= link_to('Feed', '/', class: 'btn btn-default') %>
+        <%= button_to('Feed', '/', class: 'btn btn-default') %>
         <% end %>
       <% end %>
     </p>
