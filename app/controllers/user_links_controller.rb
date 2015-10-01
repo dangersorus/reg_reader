@@ -19,6 +19,7 @@ class UserLinksController < ApplicationController
 
   # GET /user_links/1/edit
   def edit
+
   end
 
   # POST /user_links
