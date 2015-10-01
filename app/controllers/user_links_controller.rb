@@ -27,7 +27,7 @@ class UserLinksController < ApplicationController
     @user_link = UserLink.new(user_link_params)
     respond_to do |format|
       if @user_link.save
-        format.html { redirect_to '/', notice: 'Article Saved.' }
+        format.html { redirect_to '/', notice: 'Article Saved' }
         format.json { render :show, status: :created, location: @user_link }
       else
         format.html { redirect_to '/', notice: 'Article exists.' }

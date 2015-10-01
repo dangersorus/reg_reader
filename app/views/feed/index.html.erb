@@ -1,25 +1,24 @@
 <% @feed.entries.each do |e| %>
-  <div class=' <%= cycle("odd", "even") %> .col-md-10'>
+<div class=' <%= cycle("odd", "even") %> .col-md-10'>
     <h2 ><a href=<%= e.url %>><%= e.title %> </a></h2>
     <div class='pull-right'>
-    <% if !@user_links.include?  e.entry_id %>
-    <%= form_for UserLink.new do |f| %>
-    <%= f.hidden_field :user_id, value: current_user.id %>
-    <%= f.hidden_field :url, value: e.url %>
-    <%= f.hidden_field :author, value: e.author %>
-    <%= f.hidden_field :tag, value: e.entry_id %>
-    <%= f.hidden_field :title, value: e.title %>
-    <%= f.hidden_field :summary, value: e.summary %>
-    <%= f.submit 'save', class:'btn btn-xs' %>
-    <% end %>
-    <% else %>
-    <span class="saved">saved</span>
-    <% end %>
+        <% if !@user_links.include?  e.entry_id %>
+        <%= form_for UserLink.new do |f| %>
+        <%= f.hidden_field :user_id, value: current_user.id %>
+        <%= f.hidden_field :url, value: e.url %>
+        <%= f.hidden_field :author, value: e.author %>
+        <%= f.hidden_field :tag, value: e.entry_id %>
+        <%= f.hidden_field :title, value: e.title %>
+        <%= f.hidden_field :summary, value: e.summary %>
+        <%= f.submit 'save', class:'btn btn-xs' %>
+        <% end %>
+        <% else %>
+        <span class="saved">saved</span>
+        <% end %>
     </div>
     <h7 class='btn'><%= e.author %></h7>
-  </div>
-  <div class='<%= cycle("even", "odd") %>'>
+</div>
+<div class='<%= cycle("even", "odd") %>'>
     <%= raw e.summary %>
-
-  </div>
+</div>
 <% end %>

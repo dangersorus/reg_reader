@@ -19,12 +19,10 @@ class UserLinksControllerTest < ActionController::TestCase
 
     assert_redirected_to user_link_path(assigns(:user_link))
   end
-
   test "should destroy user_link" do
     assert_difference('UserLink.count', -1) do
       delete :destroy, id: @user_link
     end
-
     assert_redirected_to user_links_path
   end
 end
