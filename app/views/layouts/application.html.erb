@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RegRead</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="jumbotron heada">
+    <h1>The Register Reader</h1>
+    <p>Independent news, views, opinions and reviews
+      on the latest in the IT industry.</p>
+      <p class='headb'>
+        <% if user_signed_in? %>
+        <%= current_user.email %>&nbsp&nbsp&nbsp
+        <%= link_to('Logout', destroy_user_session_path, :method => :delete, :class => 'pull-right btn btn-default') %>
+        <% if params[:controller] != 'user_links' %>
+        <%= link_to('Saved Links', '/user_links', class: 'btn btn-default') %>
+        <% else %>
+        <%= link_to('Feed', '/', class: 'btn btn-default') %>
+        <% end %>
+      </p>
+      <% end %>
+    </div>
+    <div class="container">
+      <p id="notice"><%= notice %></p>
+      <script>
+       $(function() {
+        $('#notice').delay(2500).fadeOut();
+      });
+     </script>
+     <%= yield %>
+   </div>
+ </body>
+ </html>
